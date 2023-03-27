@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Limites : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 1f;
+    public float limitXLeft=9.85f;
+    public float limitXright=9.85f;
+    public float LimitBot=6.66f;
+    public float LimitTop=10f;
     float minX, maxX, minY, maxY; // definir los límites del movimiento
 
     void Start()
@@ -19,8 +23,9 @@ public class Limites : MonoBehaviour
 
     void Update()
     {
-        float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+     
+        float h = Input.GetAxis("Horizontal") * speed ;
+        float v = Input.GetAxis("Vertical") * speed ;
 
         // limitar la posición del personaje dentro del área rectangular
         float newX = Mathf.Clamp(transform.position.x + h, minX, maxX);

@@ -28,8 +28,10 @@ public class KeyBoard_Movement : MonoBehaviour
         {
             if( Input.GetKeyDown( _up ) )
             {
-                p  = new Vector3(t.position.x, t.position.y + _step);
-                m.Move(t,p);
+                // p  = new Vector3(t.position.x, t.position.y + _step);
+                // m.Move(t,p);
+                t.position = Vector3.Lerp(t.position, new Vector3(t.position.x,t.position.y + 1,t.position.z),0.5f);
+                StartCoroutine(bajar());
             }
 
             if( Input.GetKeyDown( _down ) )
@@ -54,6 +56,12 @@ public class KeyBoard_Movement : MonoBehaviour
             Debug.LogError("Hay un error en el código");
         }
        
+    }
+    
+    IEnumerator bajar()
+    {
+        yield return new WaitForSeconds (0.1f);
+        t.position = Vector3.Lerp(t.position, new Vector3(t.position.x,t.position.y - 1,t.position.z),0.5f);
     }
     
 }
