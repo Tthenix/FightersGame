@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;  // Referencia al Rigidbody2D del jugador
     public Transform groundCheck;  // Punto de chequeo de si el jugador está en el suelo
     public LayerMask groundLayer;  // Capa del suelo
+    private Animator animator; //import animator
 
     private bool canDash = true;  // Booleano que indica si el jugador puede hacer dash
     private bool isDashing;  // Booleano que indica si el jugador está haciendo dash
@@ -21,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private TrailRenderer tr;  // Referencia al TrailRenderer del jugador
 
+    void Start(){
+        animator = GetComponent<Animator>();
+    }
     // Esta función se llama una vez por frame
     void Update()
     {
@@ -53,21 +57,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);  // Establece la velocidad horizontal del jugador
+        if (IsGrounded()) // Verifica si el jugador está en el suelo
+        {
+            animator.SetBool("IsJump", false); // Desactiva la animación de salto si el jugador está en el suelo
+        }
     }
 
     // Esta función se llama cuando el jugador salta
-    public void Jump(InputAction.CallbackContext context)
-    {
-        if (context.performed && IsGrounded())  // Si el jugador presiona el botón de salto y está en el suelo, hacer que salte
+    // Esta función se llama cuando el jugador salta
+        public void Jump(InputAction.CallbackContext context)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            if (context.performed && IsGrounded())  // Si el jugador presiona el botón de salto y está en el suelo, hacer que salte
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                animator.SetBool("IsJump", true); // Activa la animación de salto
+            }
+            else if (context.canceled && rb.velocity.y > 0f)  // Si el jugador deja de presionar el botón de salto mientras está en el aire, reducir su velocidad vertical
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
         }
 
-        if (context.canceled && rb.velocity.y > 0f)  // Si el jugador deja de presionar el botón de salto mientras está en el aire, reducir su velocidad vertical
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-    }
+
 
     // Esta función devuelve verdadero si el jugador está en el suelo
     private bool IsGrounded()
@@ -85,6 +96,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        if(horizontal  != 0f){
+            animator.SetBool("IsRunning", true);
+        }
+        else{
+            animator.SetBool("IsRunning", false);
+        }
+
         horizontal = context.ReadValue<Vector2>().x; // Lee la entrada horizontal del jugador
     }
 
