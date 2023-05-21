@@ -8,30 +8,49 @@ public class Atack : MonoBehaviour
    [SerializeField] private Transform controladorGolpe;
    [SerializeField] private float radioGolpe;
    [SerializeField] private float dañoGolpe;
+   [SerializeField] private float tiempoEntreAtaques;
+   [SerializeField] private float tiempoSiguienteAtaque;
+
+    int cg = 0;
+    bool goleo;
 
     private Vector2 punch;
     private Rigidbody2D rb;
     private Animator animator;
 
-      private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+    private void Start() {
+        animator = GetComponent<Animator>();    
     }
 
-      private void OnPunch(InputValue value)
+      private void Update()
     {
-        punch = value.Get<Vector2>();
-        Debug.Log("Puch");
+        if (tiempoSiguienteAtaque > 0)
+        {
+            tiempoSiguienteAtaque -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Fire1")){
+            Golpe();
+            tiempoSiguienteAtaque = tiempoEntreAtaques;
+        }
+
+        // if (Input.GetButtonDown("H")){
+        //     cg += 1;
+        //     if(!golpeo){
+        //         StartCoroutine(goleo);
+        //     }
+        // }
     }
 
-   private void Golpe(){
+   private void Golpe()
+   {
+    animator.SetTrigger("Attack");
     Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
 
     foreach (Collider2D colisionador in objetos){
         
-        if(colisionador.CompareTag("Jugador2")){
-            colisionador.transform.GetComponent<Jugador2>().TomarDaño(dañoGolpe);
+        if(colisionador.CompareTag("Enemigo")){
+            colisionador.transform.GetComponent<Enemigo>().TomarDaño(dañoGolpe);
         }    
      }
    }
