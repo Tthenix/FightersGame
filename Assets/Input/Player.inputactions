@@ -231,17 +231,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "52cb544f-52fb-4347-b93f-ab0b99f88d08",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Punch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "Ps4Joystick",
                     "id": "9bf33441-8fcf-44f7-ade9-4924257cbbf5",
                     "path": "OneModifier",
@@ -273,6 +262,50 @@
                     "action": "Punch",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "Keyboard H",
+                    "id": "dbe18516-4fc5-4d65-9e0a-a5963e08c22b",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Punch",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "0c08b7e3-d8bd-4950-9725-b061c21f7811",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "f5651d38-07d5-4ddc-8edc-1ae12357389e",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d67eafd3-3d00-4c22-83b1-0e0c27c999b0",
+                    "path": "<Touchscreen>/touch3/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Atack : MonoBehaviour
 {
    [SerializeField] private Transform controladorGolpe;
@@ -12,7 +13,7 @@ public class Atack : MonoBehaviour
    [SerializeField] private float tiempoSiguienteAtaque;
 
     int cg = 0;
-    bool goleo;
+    bool golpeo;
 
     private Vector2 punch;
     private Rigidbody2D rb;
@@ -22,24 +23,51 @@ public class Atack : MonoBehaviour
         animator = GetComponent<Animator>();    
     }
 
-      private void Update()
+    private void Update()
     {
         if (tiempoSiguienteAtaque > 0)
         {
             tiempoSiguienteAtaque -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Fire1")){
-            Golpe();
-            tiempoSiguienteAtaque = tiempoEntreAtaques;
-        }
-
-        // if (Input.GetButtonDown("H")){
-        //     cg += 1;
-        //     if(!golpeo){
-        //         StartCoroutine(goleo);
-        //     }
+        // if (Input.GetButtonDown("Fire1")){
+        //     Golpe();
+        //     tiempoSiguienteAtaque = tiempoEntreAtaques;
         // }
+
+        if (Input.GetKeyDown(KeyCode.H) && !golpeo)
+        {
+            Golpe();
+            golpeo = true;
+            cg += 1;
+            switch(cg)
+            {
+            case 1:
+                animator.SetTrigger("Attack");
+                break;
+            case 2:
+                animator.SetTrigger("Attack1");
+                break;
+            case 3:
+                cg = 0;
+                animator.SetTrigger("Attack2");
+                break;
+
+            }
+            StartCoroutine(Retardogolpe(tiempoEntreAtaques));
+        }
+    }
+
+  
+    
+
+    IEnumerator Retardogolpe(float tiempoEntreAtaques)
+    {
+        
+        yield return new WaitForSeconds(tiempoEntreAtaques);
+        golpeo = false;
+        yield return new WaitForSeconds(1f);
+        cg = 0;
     }
 
    private void Golpe()

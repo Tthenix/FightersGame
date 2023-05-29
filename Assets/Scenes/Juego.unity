@@ -1137,7 +1137,7 @@ MonoBehaviour:
   controladorGolpe: {fileID: 1392514871}
   radioGolpe: 1
   "da\xF1oGolpe": 20
-  tiempoEntreAtaques: 0
+  tiempoEntreAtaques: 0.5
   tiempoSiguienteAtaque: 0
 --- !u!1 &1089428616
 GameObject:
