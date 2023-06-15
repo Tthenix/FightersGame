@@ -24,22 +24,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Punch",
+                    "name": "Attack",
                     "type": "Value",
                     "id": "60d87e51-f3f5-45bb-8273-4f326abdc725",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "99ad5540-8656-4055-a02b-c7a75683711b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,7 +39,7 @@
                     "id": "f11ac898-eedf-4b3d-9ae3-5982fd032dcf",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=30,y=30)",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": true,
@@ -102,17 +93,6 @@
                     "name": "",
                     "id": "1f16a55a-a9c6-4a28-ba83-c3d96fbe9e8c",
                     "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cf092185-2b21-4a5e-8f63-dcbf236f9d34",
-                    "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -177,6 +157,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a1fb4ccc-6da7-4f97-a23e-9b68141b3aff",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3011dc64-9fbf-4297-bcff-04c26882a74b",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -237,7 +228,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -248,7 +239,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -259,62 +250,73 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "Keyboard H",
                     "id": "dbe18516-4fc5-4d65-9e0a-a5963e08c22b",
-                    "path": "OneModifier",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Up",
                     "id": "0c08b7e3-d8bd-4950-9725-b061c21f7811",
                     "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
+                    "name": "Down",
                     "id": "f5651d38-07d5-4ddc-8edc-1ae12357389e",
                     "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "e7a1cfb2-ef56-4914-8c66-3a4f0ba2a344",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "b262e626-e69e-4d07-aafc-152f15e06992",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
                     "id": "d67eafd3-3d00-4c22-83b1-0e0c27c999b0",
-                    "path": "<Touchscreen>/touch3/delta",
+                    "path": "<Touchscreen>/touch0/radius",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Punch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "de80e5ce-fa00-4fbc-9ed9-f61d851da969",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

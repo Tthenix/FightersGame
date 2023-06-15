@@ -17,10 +17,18 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
 
+    private float speedMultiplier = 1f;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+    #if UNITY_ANDROID || UNITY_IOS
+        speedMultiplier = 1.5f;
+    #endif
+
+
     }
 
     private void OnMovement(InputValue value)
@@ -28,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         movement = value.Get<Vector2>();
         animator.SetFloat("X", movement.x);
         animator.SetFloat("Y", movement.y);
-
         texto.text = ($"{movement.x}, {movement.y}");
     }
 
@@ -54,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         {
-            rb.velocity = movement * speed;
+            rb.velocity = movement * speed * speedMultiplier * Time.deltaTime;
         }
     }
 }

@@ -5,20 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void BotonStart()
     {
         SceneManager.LoadScene(1);
+    }
+
+     public void BotonOpciones()
+    {
+        SceneManager.LoadScene(2);
+    }
+         public void BotonMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

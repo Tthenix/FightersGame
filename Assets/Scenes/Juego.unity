@@ -894,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058892263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.49, y: -3.52, z: 0}
+  m_LocalPosition: {x: -7.04, y: -3.35, z: 0}
   m_LocalScale: {x: 5.7433, y: 5.7433, z: 5.7433}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1135,9 +1135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorGolpe: {fileID: 1392514871}
-  radioGolpe: 1
-  "da\xF1oGolpe": 20
-  tiempoEntreAtaques: 0.5
+  radioGolpe: 1.3
+  "da\xF1oGolpe": 5
+  tiempoEntreAtaques: 0.3
   tiempoSiguienteAtaque: 0
 --- !u!1 &1089428616
 GameObject:
