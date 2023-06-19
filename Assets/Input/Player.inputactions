@@ -94,7 +94,7 @@
                     "id": "1f16a55a-a9c6-4a28-ba83-c3d96fbe9e8c",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=30,y=30)",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": false,
@@ -226,7 +226,7 @@
                     "id": "9bf33441-8fcf-44f7-ade9-4924257cbbf5",
                     "path": "OneModifier",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=30,y=30)",
                     "groups": "",
                     "action": "Attack",
                     "isComposite": true,
@@ -238,7 +238,7 @@
                     "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Joystick",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -249,7 +249,7 @@
                     "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Joystick",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -319,6 +319,39 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "563c90a7-dec4-4437-8c76-30d9a36f984e",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "603b786d-8df0-493c-ae5a-8a179a09b79a",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "a8c1d3bc-48fe-4f11-909b-549e6bce9375",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
