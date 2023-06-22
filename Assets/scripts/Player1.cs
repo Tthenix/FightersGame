@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemigo : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
    public Image HP_P1;
    [SerializeField] private float vidaMaxima;
