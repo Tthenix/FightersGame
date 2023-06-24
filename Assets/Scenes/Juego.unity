@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 511666159}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Enemigo
+  m_TagString: Jugador2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 511666152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bdf314fb8b1bd22a5878d3eb6768c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dd6387ba6691c9f1a21959331bff947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP_P1: {fileID: 1552954536}
@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 1058892274}
   - component: {fileID: 1058892276}
   - component: {fileID: 1058892277}
+  - component: {fileID: 1058892278}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Jugador1
@@ -1243,6 +1244,22 @@ MonoBehaviour:
   "da\xF1oGolpe": 5
   tiempoEntreAtaques: 0.3
   tiempoSiguienteAtaque: 0
+  comparador: Jugador2
+--- !u!114 &1058892278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058892263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd6387ba6691c9f1a21959331bff947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_P1: {fileID: 1200893653}
+  vidaMaxima: 100
+  vida: 100
 --- !u!1 &1089428616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,10 +1870,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5fdb73de4498d0f47a5e8d67d076688c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

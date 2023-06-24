@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player1 : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
-   public Image HP_P1;
+   public Image HP_P2;
    [SerializeField] private float vidaMaxima;
 
    [SerializeField] private float vida;
@@ -35,6 +35,6 @@ public class Player1 : MonoBehaviour
 
      void Update()
     {
-        HP_P1.fillAmount = vida / vidaMaxima;
+        HP_P2.fillAmount = vida / vidaMaxima;
     }
 }

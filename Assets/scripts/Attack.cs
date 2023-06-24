@@ -19,6 +19,7 @@ public class Attack : MonoBehaviour
     private InputAction attackAction;
     private Rigidbody2D rb;
     private Animator animator;
+    [SerializeField] private string comparador;
 
     private void Awake()
     {
@@ -80,9 +81,9 @@ public class Attack : MonoBehaviour
 
         foreach (Collider2D colisionador in objetos)
         {
-            if (colisionador.CompareTag("Enemigo"))
+            if (colisionador.CompareTag(comparador))
             {
-                colisionador.transform.GetComponent<Enemigo>().TomarDaño(dañoGolpe);
+                colisionador.transform.GetComponent<Player>().TomarDaño(dañoGolpe);
             }
         }
     }
