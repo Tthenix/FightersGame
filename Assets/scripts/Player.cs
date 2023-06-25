@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
  public void TomarDaño(float daño)
  {
+   if (isDead) return; // Si ya está muerto, no se toma más daño
+   
     vida -= daño;
 
     if (vida <= 0)

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player2 : MonoBehaviour
 {
    public Image HP_P2;
+
    [SerializeField] private float vidaMaxima;
 
    [SerializeField] private float vida;
@@ -19,6 +20,8 @@ public class Player2 : MonoBehaviour
 
  public void TomarDaño(float daño)
  {
+   if (isDead) return; // Si ya está muerto, no se toma más daño
+   
     vida -= daño;
 
     if (vida <= 0)

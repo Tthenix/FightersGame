@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-public class Attack : MonoBehaviour
+public class Attack2 : MonoBehaviour
 {
-    [SerializeField] private Transform controladorGolpe;
+    [SerializeField] private Transform controladorGolpe2;
     [SerializeField] private float radioGolpe;
     [SerializeField] private float dañoGolpe;
     [SerializeField] private float tiempoEntreAtaques;
@@ -27,8 +27,7 @@ public class Attack : MonoBehaviour
         animator = GetComponent<Animator>();
 
         attackAction = new InputAction("Attack");
-        attackAction.AddBinding("<Keyboard>/h");
-        attackAction.AddBinding("<Touchscreen>/primaryTouch/delta");
+        attackAction.AddBinding("<Gamepad>/buttonNorth");
 
         attackAction.performed += ctx => Golpe();
         attackAction.Enable();
@@ -78,7 +77,7 @@ public class Attack : MonoBehaviour
     private void Golpe()
     {
         animator.SetTrigger("Attack");
-        Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe2.position, radioGolpe);
 
         foreach (Collider2D colisionador in objetos)
         {
@@ -92,6 +91,6 @@ public class Attack : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(controladorGolpe.position, radioGolpe);
+        Gizmos.DrawWireSphere(controladorGolpe2.position, radioGolpe);
     }
 }

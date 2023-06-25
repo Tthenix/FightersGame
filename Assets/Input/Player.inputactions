@@ -90,17 +90,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "1f16a55a-a9c6-4a28-ba83-c3d96fbe9e8c",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=30,y=30)",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "Phone",
                     "id": "d28e91fc-3ea7-4f1c-8323-c2a6149f1131",
                     "path": "2DVector",
@@ -223,42 +212,9 @@
                 },
                 {
                     "name": "Ps4Joystick",
-                    "id": "9bf33441-8fcf-44f7-ade9-4924257cbbf5",
+                    "id": "ec65d53e-2782-4902-9c76-5eb95cf6e56f",
                     "path": "OneModifier",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=30,y=30)",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "a1de0a50-df32-455c-b5c1-1200fe0d504f",
-                    "path": "<DualShockGamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "6c95917c-d1b2-4dbb-84d0-8939d8d3c63b",
-                    "path": "<DualShockGamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Keyboard H",
-                    "id": "dbe18516-4fc5-4d65-9e0a-a5963e08c22b",
-                    "path": "2DVector",
-                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
@@ -266,45 +222,23 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Up",
-                    "id": "0c08b7e3-d8bd-4950-9725-b061c21f7811",
-                    "path": "<Keyboard>/h",
+                    "name": "Modifier",
+                    "id": "113e28c6-7d6d-45a0-b5b9-0983e8534df1",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Down",
-                    "id": "f5651d38-07d5-4ddc-8edc-1ae12357389e",
-                    "path": "<Keyboard>/h",
+                    "name": "Binding",
+                    "id": "d6886a1f-d1ab-4204-b8b9-6e4ad6df1c0f",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Left",
-                    "id": "e7a1cfb2-ef56-4914-8c66-3a4f0ba2a344",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Right",
-                    "id": "b262e626-e69e-4d07-aafc-152f15e06992",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -319,39 +253,6 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "One Modifier",
-                    "id": "563c90a7-dec4-4437-8c76-30d9a36f984e",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "603b786d-8df0-493c-ae5a-8a179a09b79a",
-                    "path": "<DualShockGamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "a8c1d3bc-48fe-4f11-909b-549e6bce9375",
-                    "path": "<DualShockGamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
