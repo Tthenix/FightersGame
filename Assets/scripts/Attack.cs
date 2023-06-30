@@ -21,10 +21,14 @@ public class Attack : MonoBehaviour
     private Animator animator;
     [SerializeField] private string comparador;
 
+    private Player player; // Referencia al script Player para verificar la muerte
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        player = GetComponent<Player>(); // Obtener referencia al script Player
 
         attackAction = new InputAction("Attack");
         attackAction.AddBinding("<Keyboard>/h");
@@ -41,6 +45,8 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
+        if (player.EstaMuerto()) return; // Verificar si el personaje está muerto y detener el código de ataque si es así
+
         if (tiempoSiguienteAtaque > 0)
         {
             tiempoSiguienteAtaque -= Time.deltaTime;
@@ -77,6 +83,8 @@ public class Attack : MonoBehaviour
 
     private void Golpe()
     {
+        if (player.EstaMuerto()) return; // Verificar si el personaje está muerto y evitar el golpe si es así
+
         animator.SetTrigger("Attack");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
 

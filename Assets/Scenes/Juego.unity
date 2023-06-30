@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303277496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.021, z: 0}
+  m_LocalPosition: {x: -0.098, y: 0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -278,9 +278,9 @@ GameObject:
   - component: {fileID: 511666162}
   - component: {fileID: 511666157}
   - component: {fileID: 511666158}
-  - component: {fileID: 511666159}
   - component: {fileID: 511666160}
   - component: {fileID: 511666161}
+  - component: {fileID: 511666159}
   - component: {fileID: 511666163}
   m_Layer: 0
   m_Name: Player2
@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_P1: {fileID: 1552954536}
+  gameObjectToDesactivate: {fileID: 511666152}
   vidaMaxima: 100
   vida: 100
 --- !u!114 &511666160
@@ -496,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorGolpe2: {fileID: 303277497}
-  radioGolpe: 1.3
+  radioGolpe: 1
   "da\xF1oGolpe": 5
   tiempoEntreAtaques: 0.3
   tiempoSiguienteAtaque: 0
@@ -597,7 +598,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: ce7cb480c1c618e40912fad57e609566, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6f4d44e884d054b4f831744f73631696, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1187,8 +1188,8 @@ GameObject:
   - component: {fileID: 1058892275}
   - component: {fileID: 1058892274}
   - component: {fileID: 1058892276}
-  - component: {fileID: 1058892277}
   - component: {fileID: 1058892278}
+  - component: {fileID: 1058892277}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Jugador1
@@ -1256,7 +1257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058892263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.04, y: -3.35, z: 0}
+  m_LocalPosition: {x: -7.04, y: -3.47, z: 0}
   m_LocalScale: {x: 5.7433, y: 5.7433, z: 5.7433}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1496,7 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorGolpe: {fileID: 1392514871}
-  radioGolpe: 1.3
+  radioGolpe: 1
   "da\xF1oGolpe": 5
   tiempoEntreAtaques: 0.3
   tiempoSiguienteAtaque: 0
@@ -1514,6 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP_P1: {fileID: 1200893653}
+  gameObjectToDesactivate: {fileID: 1058892263}
   vidaMaxima: 100
   vida: 100
 --- !u!1 &1089428616
@@ -1954,6 +1956,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1295601337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295601339}
+  - component: {fileID: 1295601338}
+  m_Layer: 0
+  m_Name: Lose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1295601338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295601337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c56521071eb2db4a90d1f36946aff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToDesactivate: {fileID: 1058892263}
+--- !u!4 &1295601339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295601337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 293.4495, y: 354.96524, z: 2.2014425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1301721917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392514870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: -0.021, z: 0}
+  m_LocalPosition: {x: 0.119, y: -0.016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
