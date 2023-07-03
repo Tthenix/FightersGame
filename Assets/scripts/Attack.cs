@@ -12,6 +12,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private float dañoGolpe;
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField] private float tiempoSiguienteAtaque;
+    [SerializeField] private AudioSource AtaqueSonido;
 
     int cg = 0;
     bool golpeo;
@@ -60,13 +61,16 @@ public class Attack : MonoBehaviour
             {
                 case 1:
                     animator.SetTrigger("Attack");
+                    AtaqueSonido.Play();
                     break;
                 case 2:
                     animator.SetTrigger("Attack1");
+                    AtaqueSonido.Play();
                     break;
                 case 3:
                     cg = 0;
                     animator.SetTrigger("Attack2");
+                    AtaqueSonido.Play();
                     break;
             }
             StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
