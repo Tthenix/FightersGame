@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-public class Opciones : MonoBehaviour
+public class Opciones : ScriptableObject
 {
     [SerializeField] private AudioMixer audioMixer;
 

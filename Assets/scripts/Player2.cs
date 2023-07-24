@@ -9,6 +9,8 @@ public class Player2 : MonoBehaviour
 
     [SerializeField] private float vidaMaxima;
     [SerializeField] private float vida;
+ 
+    
     private Animator animator;
     bool isDead = false;
 
