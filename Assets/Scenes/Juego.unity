@@ -200,8 +200,7 @@ GameObject:
   - component: {fileID: 511666158}
   - component: {fileID: 511666160}
   - component: {fileID: 511666161}
-  - component: {fileID: 511666159}
-  - component: {fileID: 511666163}
+  - component: {fileID: 511666165}
   - component: {fileID: 511666164}
   m_Layer: 0
   m_Name: Player2
@@ -321,22 +320,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &511666159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511666152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd6387ba6691c9f1a21959331bff947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP_P1: {fileID: 1552954536}
-  gameObjectToDesactivate: {fileID: 511666152}
-  vidaMaxima: 100
-  vida: 100
 --- !u!114 &511666160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,25 +388,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23, y: 0.46}
   m_EdgeRadius: 0
---- !u!114 &511666163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511666152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0996c4b5e070a8e418ec82215795f396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorGolpe2: {fileID: 303277497}
-  radioGolpe: 1
-  "da\xF1oGolpe": 5
-  tiempoEntreAtaques: 0.3
-  tiempoSiguienteAtaque: 0
-  AtaqueSonido: {fileID: 511666164}
-  comparador: Jugador1
 --- !u!82 &511666164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -520,6 +484,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &511666165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511666152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd1c7ad7083fab04b2d1ec87800164c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_P2: {fileID: 1552954536}
+  gameObjectToDesactivate: {fileID: 511666152}
+  vidaMaxima: 100
+  vida: 100
+  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
+  controladorGolpe: {fileID: 303277497}
+  radioGolpe: 1
+  "da\xF1oGolpe": 5
+  tiempoEntreAtaques: 0.3
+  tiempoSiguienteAtaque: 0
+  AtaqueSonido: {fileID: 511666164}
+  comparador: Jugador1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +602,7 @@ AudioSource:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: ce7cb480c1c618e40912fad57e609566, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f4d44e884d054b4f831744f73631696, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1127,7 +1115,6 @@ GameObject:
   - component: {fileID: 1058892274}
   - component: {fileID: 1058892276}
   - component: {fileID: 1058892278}
-  - component: {fileID: 1058892277}
   - component: {fileID: 1058892279}
   m_Layer: 0
   m_Name: Player1
@@ -1423,25 +1410,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1058892277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058892263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ff8bcf47b8b614e9b27e2a54183e22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorGolpe: {fileID: 1392514871}
-  radioGolpe: 1
-  "da\xF1oGolpe": 5
-  tiempoEntreAtaques: 0.3
-  tiempoSiguienteAtaque: 0
-  AtaqueSonido: {fileID: 1058892279}
-  comparador: Jugador2
 --- !u!114 &1058892278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,6 +1426,14 @@ MonoBehaviour:
   gameObjectToDesactivate: {fileID: 1058892263}
   vidaMaxima: 100
   vida: 100
+  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
+  controladorGolpe: {fileID: 1392514871}
+  radioGolpe: 1
+  "da\xF1oGolpe": 5
+  tiempoEntreAtaques: 0.3
+  tiempoSiguienteAtaque: 0
+  AtaqueSonido: {fileID: 1058892279}
+  comparador: Jugador2
 --- !u!82 &1058892279
 AudioSource:
   m_ObjectHideFlags: 0

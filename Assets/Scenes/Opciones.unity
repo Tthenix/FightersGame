@@ -241,7 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a212eff9d31dba8b9aa20e9587abded7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: ce7cb480c1c618e40912fad57e609566, type: 2}
+  audioSource: {fileID: 1823071984}
+  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
+  slider: {fileID: 417077866}
 --- !u!1 &225516734
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,10 +539,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1712656492}
   m_HandleRect: {fileID: 2135972673}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1831,7 +1833,7 @@ AudioSource:
   m_GameObject: {fileID: 1823071983}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: ce7cb480c1c618e40912fad57e609566, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8d36987eff2585489061d4cf64e2be9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

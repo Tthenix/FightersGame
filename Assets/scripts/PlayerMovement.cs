@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float speedMultiplier = 1f;
 
+    private bool isDead;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,11 +32,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public bool IsDead{
+        get{
+            return isDead;
+        }
+
+        set{
+            isDead = value;
+        }
+    }
+
     private void OnMovement(InputValue value)
     {
+        if(isDead==false){
         movement = value.Get<Vector2>();
         animator.SetFloat("X", movement.x);
         animator.SetFloat("Y", movement.y);
+        }
+
     }
 
     private void OnDash(InputValue value)
