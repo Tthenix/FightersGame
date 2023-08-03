@@ -88,8 +88,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(isDead == false){
-
-        
         HP_P1.fillAmount = vida / vidaMaxima;
 
         if (isDeactivating)

@@ -61,6 +61,11 @@ public class Player2 : MonoBehaviour
         }
     }
 
+    public void Destroy()
+    {
+        Destroy(this);
+    }
+
     public bool EstaMuerto() // Método público para verificar si el personaje está muerto
     {
         return isDead;
@@ -70,6 +75,7 @@ public class Player2 : MonoBehaviour
     {
         animator.SetTrigger("Death");
         isDead = true;
+        attackAction.Disable();
         transform.GetComponent <PlayerMovement>().IsDead = true; 
 
         if (!isDeactivating)
@@ -81,6 +87,7 @@ public class Player2 : MonoBehaviour
 
     void Update()
     {
+        if(isDead == false){
         HP_P2.fillAmount = vida / vidaMaxima;
 
         if (isDeactivating)
@@ -123,6 +130,7 @@ public class Player2 : MonoBehaviour
                     break;
             }
             StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
+        }
         }
     }
 
@@ -168,7 +176,6 @@ public class Player2 : MonoBehaviour
             if (colisionador.CompareTag(comparador))
             {
                 colisionador.transform.GetComponent<Player>().TomarDaño(dañoGolpe);
-
             }
         }
     }

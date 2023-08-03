@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1835,7 +1835,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8d36987eff2585489061d4cf64e2be9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
