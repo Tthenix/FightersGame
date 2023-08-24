@@ -56,7 +56,7 @@ public class Player2 : MonoBehaviour
 
         if (vida <= 0)
         {
-            Invoke("Muerte" ,1.0f);
+            Invoke("Muerte" ,0f);
             data.PuntajeP1 += 1;
         }
     }
