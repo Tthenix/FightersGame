@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     //Data
     [SerializeField] private Data data;
 
+    //GameOverPanel
+    public GameObject panel;
+
     //Attack
     [SerializeField] private Transform controladorGolpe;
     [SerializeField] private float radioGolpe;
@@ -58,6 +61,7 @@ public class Player : MonoBehaviour
         {
             Invoke("Muerte" ,0f);
            data.PuntajeP2 += 1;
+            panel.SetActive(true);
         }
     }
 
