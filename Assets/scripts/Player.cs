@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float vidaMaxima;
     [SerializeField] private float vida;
-    
+
     private Animator animator;
     private bool isDead = false;
 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     private InputAction attackAction;
     private Rigidbody2D rb;
-    
+
     [SerializeField] private string comparador;
 
     private Player2 player2; // Referencia al script Player para verificar la muerte
@@ -59,8 +59,8 @@ public class Player : MonoBehaviour
 
         if (vida <= 0)
         {
-            Invoke("Muerte" ,0f);
-           data.PuntajeP2 += 1;
+            Invoke("Muerte", 0f);
+            data.PuntajeP2 += 1;
             panel.SetActive(true);
         }
     }
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Death");
         isDead = true;
         attackAction.Disable();
-        transform.GetComponent <PlayerMovement>().IsDead = true; 
+        transform.GetComponent<PlayerMovement>().IsDead = true;
 
         if (!isDeactivating)
         {
@@ -91,50 +91,51 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(isDead == false){
-        HP_P1.fillAmount = vida / vidaMaxima;
-
-        if (isDeactivating)
+        if (isDead == false)
         {
-            currentTime += Time.deltaTime;
+            HP_P1.fillAmount = vida / vidaMaxima;
 
-            if (currentTime >= delay)
+            if (isDeactivating)
             {
-                gameObjectToDesactivate.SetActive(false);
-                isDeactivating = false;
+                currentTime += Time.deltaTime;
+
+                if (currentTime >= delay)
+                {
+                    gameObjectToDesactivate.SetActive(false);
+                    isDeactivating = false;
+                }
             }
-        }
 
-        //Attack
-        if (player2.EstaMuerto()) return; // Verificar si el personaje está muerto y detener el código de ataque si es así
+            //Attack
+            if (player2.EstaMuerto()) return; // Verificar si el personaje está muerto y detener el código de ataque si es así
 
-        if (tiempoSiguienteAtaque > 0)
-        {
-            tiempoSiguienteAtaque -= Time.deltaTime;
-        }
-
-        if (attackAction.triggered && !golpeo)
-        {
-            golpeo = true;
-            cg += 1;
-            switch (cg)
+            if (tiempoSiguienteAtaque > 0)
             {
-                case 1:
-                    animator.SetTrigger("Attack");
-                    AtaqueSonido.Play();
-                    break;
-                case 2:
-                    animator.SetTrigger("Attack1");
-                    AtaqueSonido.Play();
-                    break;
-                case 3:
-                    cg = 0;
-                    animator.SetTrigger("Attack2");
-                    AtaqueSonido.Play();
-                    break;
+                tiempoSiguienteAtaque -= Time.deltaTime;
             }
-            StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
-        }
+
+            if (attackAction.triggered && !golpeo)
+            {
+                golpeo = true;
+                cg += 1;
+                switch (cg)
+                {
+                    case 1:
+                        animator.SetTrigger("Attack");
+                        AtaqueSonido.Play();
+                        break;
+                    case 2:
+                        animator.SetTrigger("Attack1");
+                        AtaqueSonido.Play();
+                        break;
+                    case 3:
+                        cg = 0;
+                        animator.SetTrigger("Attack2");
+                        AtaqueSonido.Play();
+                        break;
+                }
+                StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
+            }
         }
     }
 
@@ -160,7 +161,7 @@ public class Player : MonoBehaviour
         attackAction.Disable();
     }
 
-      IEnumerator RetardoGolpe(float tiempoEntreAtaques)
+    IEnumerator RetardoGolpe(float tiempoEntreAtaques)
     {
         yield return new WaitForSeconds(tiempoEntreAtaques);
         golpeo = false;
