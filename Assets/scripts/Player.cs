@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        panel.SetActive(false);
     }
 
     public void TomarDaño(float daño)

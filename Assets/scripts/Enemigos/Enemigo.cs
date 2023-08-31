@@ -9,7 +9,7 @@ public class Enemigo : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 7f);
+        Destroy(gameObject, 5f);
     }
 
     public void SetMoveDirection(Vector2 direction)
