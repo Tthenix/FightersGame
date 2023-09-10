@@ -90,3 +90,12 @@ Thumbs.db
 # Logs
 *.log
 *.log.meta
+
+# Your custom rule
+FightersGamev1_BurstDebugInformation_DoNotShip
+FightersGamev1_Data
+test2_BurstDebugInformation_DoNotShip
+test3_BurstDebugInformation_DoNotShip
+test4_BurstDebugInformation_DoNotShip
+test_BurstDebugInformation_DoNotShip
+web
