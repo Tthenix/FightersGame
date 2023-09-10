@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 530, y: -340}
+  m_AnchoredPosition: {x: 523, y: -380}
   m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86285466
@@ -920,7 +920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 530, y: -340}
+  m_AnchoredPosition: {x: 530, y: -360.1}
   m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500231778
@@ -1121,7 +1121,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 3.4898653
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -1130,7 +1130,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!95 &511666158
 Animator:
   serializedVersion: 5
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   radioGolpe: 1
   "da\xF1oGolpe": 5
   tiempoEntreAtaques: 0.3
-  tiempoSiguienteAtaque: 0
+  tiempoSiguienteAtaque: 1
   AtaqueSonido: {fileID: 511666164}
   comparador: Jugador1
 --- !u!1 &516507358
@@ -1485,7 +1485,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 4.685767
+  orthographic size: 4.559719
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13812387, y: -1.6459227, z: -13}
+  m_LocalPosition: {x: -0.13800132, y: -1.7719707, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2696,7 +2696,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &1058892269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2914,11 +2914,12 @@ MonoBehaviour:
   panel: {fileID: 1279923029}
   controladorGolpe: {fileID: 1392514871}
   radioGolpe: 1
-  "da\xF1oGolpe": 4
-  tiempoEntreAtaques: 0.3
-  tiempoSiguienteAtaque: 0
+  "da\xF1oGolpe": 5
+  tiempoEntreAtaques: 0.5
+  tiempoSiguienteAtaque: 1
   AtaqueSonido: {fileID: 1058892279}
   comparador: Jugador2
+  fuerzaDeEmpuje: 500
 --- !u!82 &1058892279
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3218,7 +3219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291, y: -340}
+  m_AnchoredPosition: {x: 291, y: -360.1}
   m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107504317
@@ -3445,7 +3446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291, y: -340}
+  m_AnchoredPosition: {x: 284, y: -380}
   m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114394783
@@ -3858,8 +3859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.084656, y: 0}
+  m_SizeDelta: {x: 10.1711, y: -0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216138868
 MonoBehaviour:
@@ -3955,8 +3956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.0845947, y: 6.2211914}
+  m_SizeDelta: {x: 10.171, y: 12.442}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279923032
 MonoBehaviour:

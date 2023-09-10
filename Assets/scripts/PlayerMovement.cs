@@ -18,36 +18,41 @@ public class PlayerMovement : MonoBehaviour
 
     private float speedMultiplier = 1f;
 
-    private bool isDead;
+    private bool isDead = false;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-    #if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS
         speedMultiplier = 1.5f;
-    #endif
+#endif
 
 
     }
 
-    public bool IsDead{
-        get{
+    public bool IsDead
+    {
+        get
+        {
             return isDead;
         }
 
-        set{
+        set
+        {
             isDead = value;
         }
     }
 
     private void OnMovement(InputValue value)
     {
-        if(isDead==false){
-        movement = value.Get<Vector2>();
-        animator.SetFloat("X", movement.x);
-        animator.SetFloat("Y", movement.y);
+        if (!isDead)
+        {
+            movement = value.Get<Vector2>();
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
         }
 
     }

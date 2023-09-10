@@ -1,7 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-#
+# Unity specific files
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,6 +6,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+.vscode/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -52,9 +50,43 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+/[Bb]uilds/
 *.apk
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Rider specific files
+.idea/
+
+# User-specific Unity files
+[Ll]ibrary/ScriptAssemblies/
+[Ll]ibrary/ShaderCache/
+[Ll]ibrary/ShaderCaches/
+[Ll]ibrary/il2cpp_cache/
+[Ll]ibrary/PreprocessorBuild/
+[Ll]ibrary/UnityAssemblies/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Logs
+*.log
+*.log.meta
