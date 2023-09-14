@@ -1123,14 +1123,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3.4898653
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &511666158
 Animator:
   serializedVersion: 5
@@ -1332,12 +1332,12 @@ MonoBehaviour:
   gameObjectToDesactivate: {fileID: 511666152}
   vidaMaxima: 100
   vida: 100
-  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
   panel: {fileID: 1216138866}
+  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
   controladorGolpe: {fileID: 303277497}
   radioGolpe: 1
   "da\xF1oGolpe": 5
-  tiempoEntreAtaques: 0.3
+  tiempoEntreAtaques: 1
   tiempoSiguienteAtaque: 1
   AtaqueSonido: {fileID: 511666164}
   comparador: Jugador1
@@ -1485,7 +1485,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 4.559719
+  orthographic size: 3.7471666
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13800132, y: -1.7719707, z: -13}
+  m_LocalPosition: {x: -0.13721168, y: -2.5845222, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2696,7 +2696,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1058892269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2795,8 +2795,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key0: {r: 1, g: 0.8745099, b: 0.22352943, a: 1}
+      key1: {r: 1, g: 0.8745099, b: 0.22352943, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2910,16 +2910,15 @@ MonoBehaviour:
   gameObjectToDesactivate: {fileID: 1058892263}
   vidaMaxima: 100
   vida: 100
-  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
   panel: {fileID: 1279923029}
+  data: {fileID: 11400000, guid: 2d8cafe8dcd02e3a8b23efcd609356a8, type: 2}
   controladorGolpe: {fileID: 1392514871}
   radioGolpe: 1
   "da\xF1oGolpe": 5
-  tiempoEntreAtaques: 0.5
+  tiempoEntreAtaques: 1
   tiempoSiguienteAtaque: 1
   AtaqueSonido: {fileID: 1058892279}
   comparador: Jugador2
-  fuerzaDeEmpuje: 500
 --- !u!82 &1058892279
 AudioSource:
   m_ObjectHideFlags: 0

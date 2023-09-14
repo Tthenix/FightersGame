@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private bool isDeactivating = false;
     public GameObject panel;
     private bool isGameFrozen = false; // Variable para controlar la congelación del juego
+    [SerializeField] private ParticleSystem damageParticles; // Arrastra el sistema de partículas aquí desde el Inspector
+
 
     // Datos del jugador
     [SerializeField] private Data data;
@@ -56,8 +58,20 @@ public class Player : MonoBehaviour
             Invoke("Muerte", 0f);
             data.PuntajeP2 += 1;
         }
-    }
+        else
+        {
+            // Activa el sistema de partículas de daño
+            damageParticles.Play();
 
+            // Configura un temporizador para desactivar las partículas después de un tiempo
+            StartCoroutine(DesactivarParticulasDeDaño());
+        }
+    }
+    private IEnumerator DesactivarParticulasDeDaño()
+    {
+        yield return new WaitForSeconds(1f); // Cambia este valor según lo que desees
+        damageParticles.Stop(); // Detiene las partículas después de 2 segundos (ajusta el tiempo según tus necesidades)
+    }
     public void Destroy()
     {
         Destroy(this);
