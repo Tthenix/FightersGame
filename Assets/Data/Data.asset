@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Data
   m_EditorClassIdentifier: 
   volumen: 1
-  puntajeP1: 2
-  puntajeP2: 30
+  puntajeP1: 0
+  puntajeP2: 0
