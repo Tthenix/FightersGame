@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9fb44ee60d0f04c823e1f14f083e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1oDeLaBala": 1
+  "da\xF1oDeLaBala": 15
   velocity: {x: 0, y: 0}
   direction: {x: 0, y: -1}
   timeDestroySelf: 1
