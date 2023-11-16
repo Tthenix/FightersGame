@@ -4,7 +4,6 @@ public class BulletMovement : MonoBehaviour
 {
     private float speed = 10f;
     [SerializeField] private int dañoDeLaBala; // Agrega esta línea
-
     [SerializeField] Vector2 velocity;
     [SerializeField] Vector2 direction = new Vector2(0, 1);
     [SerializeField] int timeDestroySelf;

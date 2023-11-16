@@ -38,6 +38,17 @@ public class Player2 : MonoBehaviour
     [SerializeField] private string comparador;
     private Player player; // Referencia al script Player para verificar la muerte
 
+    // Ataque de energia
+    private InputAction shootAction;
+    [SerializeField] private Transform energyBulletController;
+    [SerializeField] private GameObject bullet;
+    bool isShooting;
+
+    // sistema de energia
+    public Image Energy_P2;
+    [SerializeField] private float energiaMaxima;
+    [SerializeField] private float EnergiaActual;
+
     private void Start()
     {
         // Inicialización al inicio del juego
@@ -50,7 +61,8 @@ public class Player2 : MonoBehaviour
     {
         if (isDead) return; // Si ya está muerto, no se toma más daño
 
-        vida -= daño;
+       vida -= daño;
+       GetComponent<Animator>().Play("Player2_TakeDamage");
         Update();
 
         if (vida <= 0)
@@ -58,21 +70,23 @@ public class Player2 : MonoBehaviour
             Invoke("Muerte", 0f);
             data.PuntajeP1 += 1;
         }
-        else
-        {
-            // Activa el sistema de partículas de daño
-            damageParticles.Play();
+     else
+    {
+        // Activa el sistema de partículas de daño
+        damageParticles.Play();
 
-            // Configura un temporizador para desactivar las partículas después de un tiempo
-            StartCoroutine(DesactivarParticulasDeDaño());
-        }
+        // Configura un temporizador para desactivar las partículas después de un tiempo
+        StartCoroutine(DesactivarParticulasDeDaño());
+
+        // Aumenta la energía
+        EnergiaActual += 5;
     }
+}
     private IEnumerator DesactivarParticulasDeDaño()
     {
         yield return new WaitForSeconds(1f); // Cambia este valor según lo que desees
         damageParticles.Stop(); // Detiene las partículas después de 2 segundos (ajusta el tiempo según tus necesidades)
     }
-
     public void Destroy()
     {
         Destroy(this);
@@ -90,6 +104,7 @@ public class Player2 : MonoBehaviour
         animator.SetTrigger("Death"); // Ejecuta la animación "Death"
         isDead = true;
         attackAction.Disable();
+        shootAction.Disable();
         transform.GetComponent<PlayerMovement>().IsDead = true;
 
         StartCoroutine(CongelarJuegoDespuesDeDelay(1f)); // Congela el juego después de 1 segundo
@@ -163,6 +178,37 @@ public class Player2 : MonoBehaviour
                 StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
             }
         }
+       // sistema de energia recarga
+        EnergiaActual += Time.deltaTime * 5;
+
+        if (EnergiaActual > energiaMaxima)
+        {
+            EnergiaActual = energiaMaxima;
+        }
+
+        Energy_P2.fillAmount = EnergiaActual / energiaMaxima;
+    }
+ // disparo de energia
+private void Shoot()
+{
+    if (EnergiaActual >= 20 && !isShooting)
+    {
+        EnergiaActual -= 20;
+        isShooting = true;
+        GetComponent<Animator>().Play("Player2_EnergyShoot");
+
+        // Inicia el tiempo de recarga
+        StartCoroutine(DelayShot());
+    }
+}
+
+    private IEnumerator DelayShot()
+    {
+        yield return new WaitForSeconds(0.5f); // Espera un segundo
+        // Crea la bala
+        Instantiate(bullet, energyBulletController.position, energyBulletController.rotation);
+        // Finaliza el tiempo de recarga
+        isShooting = false;
     }
 
     // Función para manejar el ataque del jugador
@@ -203,6 +249,13 @@ public class Player2 : MonoBehaviour
 
         attackAction.performed += ctx => Golpe();
         attackAction.Enable();
+
+        // Agregar la binding para el disparo de energía
+        shootAction = new InputAction("Shoot");
+        shootAction.AddBinding("<Gamepad>/buttonWest");
+
+        shootAction.performed += ctx => Shoot();
+        shootAction.Enable();
     }
 
     // Liberar recursos cuando el objeto se destruye

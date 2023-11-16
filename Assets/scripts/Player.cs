@@ -38,6 +38,17 @@ public class Player : MonoBehaviour
     [SerializeField] private string comparador;
     private Player2 player2;
 
+    // Ataque de energia
+    private InputAction shootAction;
+    [SerializeField] private Transform energyBulletController;
+    [SerializeField] private GameObject bullet;
+    bool isShooting;
+
+    // sistema de energia
+    public Image Energy_P1;
+    [SerializeField] private float energiaMaxima;
+    [SerializeField] private float EnergiaActual;
+
     private void Start()
     {
         // Inicialización al inicio del juego
@@ -51,6 +62,7 @@ public class Player : MonoBehaviour
         if (isDead) return;
 
         vida -= daño;
+        GetComponent<Animator>().Play("Player_TakeDamage");
         Update();
 
         if (vida <= 0)
@@ -65,6 +77,9 @@ public class Player : MonoBehaviour
 
             // Configura un temporizador para desactivar las partículas después de un tiempo
             StartCoroutine(DesactivarParticulasDeDaño());
+
+            // Aumenta la energía
+            EnergiaActual += 5;
         }
     }
     private IEnumerator DesactivarParticulasDeDaño()
@@ -89,6 +104,7 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Death"); // Ejecuta la animación "Death"
         isDead = true;
         attackAction.Disable();
+        shootAction.Disable();
         transform.GetComponent<PlayerMovement>().IsDead = true;
 
         StartCoroutine(CongelarJuegoDespuesDeDelay(1f)); // Congela el juego después de 1 segundo
@@ -126,6 +142,7 @@ public class Player : MonoBehaviour
             }
         }
 
+         // Ataque
         if (player2.EstaMuerto()) return;
 
         if (tiempoSiguienteAtaque > 0)
@@ -161,10 +178,41 @@ public class Player : MonoBehaviour
             tiempoSiguienteAtaque = tiempoEntreAtaques; // Reiniciar el tiempo de siguiente ataque
             StartCoroutine(RetardoGolpe(tiempoEntreAtaques));
         }
+        // sistema de energia recarga
+        EnergiaActual += Time.deltaTime * 5;
+
+        if (EnergiaActual > energiaMaxima)
+        {
+            EnergiaActual = energiaMaxima;
+        }
+
+        Energy_P1.fillAmount = EnergiaActual / energiaMaxima;
+    }
+    // disparo de energia
+    private void Shoot()
+    {
+        if (EnergiaActual >= 20 && !isShooting)
+        {
+            EnergiaActual -= 20;
+            isShooting = true;
+            GetComponent<Animator>().Play("Player_EnergyShoot");
+
+        
+
+            // Inicia el tiempo de recarga
+            StartCoroutine(DelayShot());
+        }
     }
 
-
-
+    private IEnumerator DelayShot()
+    {
+        yield return new WaitForSeconds(0.5f); // Espera un segundo
+        // Crea la bala
+        Instantiate(bullet, energyBulletController.position, energyBulletController.rotation);
+        // Finaliza el tiempo de recarga
+        isShooting = false;
+    }
+    
     // Función para manejar el ataque del jugador
     private void Golpe()
     {
@@ -204,6 +252,13 @@ public class Player : MonoBehaviour
 
         attackAction.performed += ctx => Golpe();
         attackAction.Enable();
+
+         // Agregar la binding para el disparo de energía
+        shootAction = new InputAction("Shoot");
+        shootAction.AddBinding("<Keyboard>/g");
+
+        shootAction.performed += ctx => Shoot();
+        shootAction.Enable();
     }
 
     // Liberar recursos cuando el objeto se destruye
