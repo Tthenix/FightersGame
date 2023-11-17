@@ -17,11 +17,5 @@ public class EnergyBullet2 : MonoBehaviour
             other.GetComponent<Player>().TomarDaño(daño);
             Destroy(gameObject);
          }
-         else if(other.CompareTag("Bala1"))
-         {
-            Debug.Log("La bala 2 colisionó con otra bala");
-            Destroy(gameObject);
-            Destroy(other.gameObject); // Destroy the other bullet here
-         }
    }
 }
